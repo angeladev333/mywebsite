@@ -1,20 +1,69 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import {
+  motion,
+  useMotionValueEvent,
+  useScroll,
+  AnimatePresence,
+} from 'framer-motion';
 
 function Navbar() {
+  const { scrollY } = useScroll();
+  const [visible, setVisible] = useState<boolean>(true);
+
+  useMotionValueEvent(scrollY, 'change', (latest) => {
+    if (latest > 100) {
+      setVisible(false);
+    } else {
+      setVisible(true);
+    }
+  });
+
   return (
-    <div className="flex justify-between items-center rounded-full m-12 px-6 bg-sky-50 sticky top-0 z-50">
-      <div className="flex items-center gap-4">
-        <Image src="/assets/logo.png" alt="logo" width={60} height={60} />
-      </div>
-      <div className="flex items-center gap-4">
-        <Link href="/">Home</Link>
-        <Link href="/about">About</Link>
-        <Link href="/contact">Contact</Link>
-      </div>
+    <div className="sticky top-0 z-50 flex justify-center items-center m-22">
+      <motion.div
+        className="flex items-center justify-between bg-neutral-50 shadow-md rounded-full px-12 py-2"
+        animate={{
+          width: visible ? '100%' : '100px',
+        }}
+        transition={{
+          type: 'spring',
+          stiffness: 200,
+          damping: 25,
+        }}
+      >
+        {/* Logo */}
+        <div className="flex items-center">
+          <Image src="/assets/logo.png" alt="logo" width={60} height={60} />
+        </div>
+
+        {/* Navigation Links */}
+        <AnimatePresence>
+          {visible && (
+            <div className="flex items-center gap-4">
+              <Link href="/" className="hover:text-blue-600 transition-colors">
+                Home
+              </Link>
+              <Link
+                href="/about"
+                className="hover:text-blue-600 transition-colors"
+              >
+                About
+              </Link>
+              <Link
+                href="/contact"
+                className="hover:text-blue-600 transition-colors"
+              >
+                Contact
+              </Link>
+            </div>
+          )}
+        </AnimatePresence>
+      </motion.div>
     </div>
   );
 }
-
 export default Navbar;
