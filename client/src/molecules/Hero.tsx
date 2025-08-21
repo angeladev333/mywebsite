@@ -6,6 +6,7 @@ import {
   FaRegEnvelope,
   FaDownload,
   FaChevronDown,
+  FaExternalLinkAlt,
 } from 'react-icons/fa';
 import Image from 'next/image';
 
@@ -16,10 +17,10 @@ function HeroPage() {
       <div className="grid grid-cols-5 gap-6 min-h-[200px]">
         {/* Profile Card */}
         <div className="col-span-3">
-          <Card className="flex items-center justify-between">
+          <Card className="bg-[#fcd5ce] flex items-center justify-between h-full relative">
             <div className="flex flex-col gap-4">
               {/* Status Badge */}
-              <div className="inline-flex items-center gap-2 bg-green-200 rounded-full px-4 py-2">
+              <div className="inline-flex items-center gap-2 bg-[#d8e2dc] rounded-full px-4 py-2">
                 <span className="text-lg">⭐</span>
                 <span className="text-gray-700 font-medium">
                   looking for summer 2026 internship
@@ -52,10 +53,10 @@ function HeroPage() {
         </div>
 
         {/* Photo Card */}
-        <div className="col-span-2">
-          <div className="overflow-hidden rounded-3xl shadow-lg h-full relative">
+        <div className="col-span-2 ">
+          <div className="overflow-hidden rounded-3xl shadow-lg h-full relative hover:scale-102 transition-transform duration-300 cursor-pointer">
             <Image
-              src="/assets/profile.jpg"
+              src="/assets/image.jpg"
               alt="profile"
               fill
               className="object-cover"
@@ -66,7 +67,7 @@ function HeroPage() {
 
       {/* About Section */}
       <div className="w-full">
-        <Card className="min-h-[200px]">
+        <Card className="bg-[#f7ede2] min-h-[200px]">
           <div className="flex justify-between items-start ml-4">
             <div>
               <h2 className="text-xl font-bold text-gray-800 mb-4">
@@ -75,9 +76,7 @@ function HeroPage() {
               <ul className="space-y-2 text-gray-700">
                 <li className="flex items-start gap-2">
                   <span className="text-gray-400">•</span>
-                  <span>
-                    Studying @ University of Waterloo & Tokyo Science (Masters)
-                  </span>
+                  <span>Studying @ University of Waterloo & Tokyo Science</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-gray-400">•</span>
@@ -103,7 +102,7 @@ function HeroPage() {
       {/* Action Cards Row */}
       <div className="flex gap-6 items-center">
         {/* Resume Card */}
-        <Card className="flex-1 rounded-full px-6 py-4 hover:shadow-xl transition-shadow cursor-pointer">
+        <Card className="bg-[#fcd5ce] flex-1 rounded-full px-6 py-4 hover:shadow-xl transition-shadow cursor-pointer">
           <div className="flex items-center justify-between ml-4">
             <span className="text-lg font-semibold text-gray-800">Resume</span>
             <div className="w-8 h-8 rounded-full flex items-center justify-center">
@@ -113,19 +112,19 @@ function HeroPage() {
         </Card>
 
         {/* Design Portfolio Card */}
-        <Card className="flex-1 rounded-full px-6 py-4 hover:shadow-xl transition-shadow cursor-pointer">
+        <Card className="bg-[#d8e2dc] flex-1 rounded-full px-6 py-4 hover:shadow-xl transition-shadow cursor-pointer">
           <div className="flex items-center justify-between ml-4">
             <span className="text-lg font-semibold text-gray-800">
               Design Portfolio
             </span>
-            <div className="w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center">
-              <span className="text-white text-sm">↗</span>
+            <div className="w-8 h-8 rounded-full flex items-center justify-center">
+              <FaExternalLinkAlt className="text-gray-700" />
             </div>
           </div>
         </Card>
 
         {/* Scroll Down Button */}
-        <Card className="rounded-full p-4 w-16 h-16 flex items-center justify-center hover:shadow-xl transition-shadow cursor-pointer">
+        <Card className="bg-[#ffd7ba] rounded-full p-4 w-16 h-16 flex items-center justify-center hover:shadow-xl transition-shadow cursor-pointer">
           <FaChevronDown className="text-gray-600 text-xl" />
         </Card>
       </div>

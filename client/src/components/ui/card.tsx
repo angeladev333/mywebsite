@@ -9,7 +9,7 @@ interface CardProps {
 function Card({ children, className = '', props }: CardProps) {
   return (
     <div
-      className={`bg-neutral-200 shadow-lg rounded-3xl p-6 ${className}`}
+      className={`shadow-lg rounded-3xl p-6 hover:scale-102 transition-transform duration-300 cursor-pointer ${className}`}
       {...props}
     >
       {children}

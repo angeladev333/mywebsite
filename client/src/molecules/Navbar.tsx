@@ -45,19 +45,19 @@ function Navbar() {
           {visible && (
             <div className="flex items-center gap-4">
               <Link href="/" className="hover:text-blue-600 transition-colors">
-                Home
+                Education
               </Link>
               <Link
                 href="/about"
                 className="hover:text-blue-600 transition-colors"
               >
-                About
+                Experiences
               </Link>
               <Link
                 href="/contact"
                 className="hover:text-blue-600 transition-colors"
               >
-                Contact
+                Projects
               </Link>
             </div>
           )}
