@@ -24,3 +24,9 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.dotted-background {
+  background-image: radial-gradient(circle at center, #c6c0c0 1px, transparent 1px);
+  background-size: 30px 30px;
+  background-repeat: round;
+}
