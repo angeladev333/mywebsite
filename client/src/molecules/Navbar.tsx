@@ -15,7 +15,7 @@ function Navbar() {
   const [visible, setVisible] = useState<boolean>(true);
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
-    if (latest > 100) {
+    if (latest > 150) {
       setVisible(false);
     } else {
       setVisible(true);
@@ -23,9 +23,10 @@ function Navbar() {
   });
 
   return (
+    // blurry navbar background
     <div className="sticky top-0 z-50 flex justify-center items-center m-22">
       <motion.div
-        className="flex items-center justify-between bg-neutral-50 shadow-md rounded-full px-12 py-2"
+        className="flex items-center justify-between bg-slate-50/50 shadow-md rounded-full px-12 py-2 backdrop-blur-sm"
         animate={{
           width: visible ? '100%' : '100px',
         }}
