@@ -7,12 +7,14 @@ import {
   FaGithubAlt,
   FaLinkedin,
   FaRegEnvelope,
-  FaChevronDown,
+  // FaChevronDown,
+  FaAngleDown,
 } from 'react-icons/fa';
 import { MdArrowOutward } from 'react-icons/md';
 import { FiDownload } from 'react-icons/fi';
 import Image from 'next/image';
 import { TypingText } from '../components/ui/shadcn-io/typing-text';
+import { motion } from 'framer-motion';
 
 function HeroPage() {
   const aboutSectionList = [
@@ -23,6 +25,7 @@ function HeroPage() {
   ];
 
   const [hovering, setHovering] = useState(false);
+  const [hoveringEmoji, setHoveringEmoji] = useState(false);
 
   return (
     <div className="flex flex-col gap-6 w-full">
@@ -44,7 +47,7 @@ function HeroPage() {
                 <span className="text-gray-700 font-medium">
                   {hovering ? (
                     <TypingText
-                      text={['looking for work']}
+                      text={['looking for fall 2026 internship']}
                       duration={100}
                       delay={0}
                       inView={true}
@@ -53,7 +56,7 @@ function HeroPage() {
                       inViewMargin="0px"
                     />
                   ) : (
-                    'looking for work'
+                    'incoming SWE intern @bloomberg'
                   )}
                 </span>
               </div>
@@ -104,7 +107,13 @@ function HeroPage() {
 
       {/* About Section */}
       <div className="w-full">
-        <Card className="bg-[#f7ede2] min-h-[200px]">
+        <Card
+          className="bg-[#f7ede2] min-h-[200px]"
+          props={{
+            onMouseEnter: () => setHoveringEmoji(true),
+            onMouseLeave: () => setHoveringEmoji(false),
+          }}
+        >
           <div className="flex justify-between items-start ml-4 group">
             <div>
               <h2 className="text-lg font-semibold text-gray-800 mb-4">
@@ -120,7 +129,15 @@ function HeroPage() {
               </ul>
             </div>
             <div className="text-xl opacity-80">
-              <span className="hidden group-hover:inline">૮₍ ˶ᵔ ᵕ ᵔ˶ ₎ა</span>
+              {hoveringEmoji && (
+                <motion.span
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  ૮₍ ˶ᵔ ᵕ ᵔ˶ ₎ა
+                </motion.span>
+              )}
             </div>
           </div>
         </Card>
@@ -129,7 +146,14 @@ function HeroPage() {
       {/* Action Cards Row */}
       <div className="flex gap-6 items-center">
         {/* Resume Card */}
-        <Card className="bg-[#fcd5ce] flex-1 rounded-full hover:shadow-xl transition-shadow cursor-pointer">
+        <Card
+          className="bg-[#fcd5ce] flex-1 rounded-full hover:shadow-xl transition-shadow cursor-pointer"
+          props={{
+            onClick: () => {
+              window.open('/resume/AngelaXu_resume_3.3.pdf', '_blank');
+            },
+          }}
+        >
           <div className="flex items-center justify-between ml-4">
             <span className="text-lg text-gray-800">Resume</span>
             <ClickIcon
@@ -143,7 +167,14 @@ function HeroPage() {
         </Card>
 
         {/* Design Portfolio Card */}
-        <Card className="h-full bg-[#d8e2dc] flex-1 rounded-full hover:shadow-xl transition-shadow cursor-pointer">
+        <Card
+          className="h-full bg-[#d8e2dc] flex-1 rounded-full hover:shadow-xl transition-shadow cursor-pointer"
+          props={{
+            onClick: () => {
+              window.open('https://angela-xu-site-ii.super.site/', '_blank');
+            },
+          }}
+        >
           <div className="flex items-center justify-between ml-4">
             <span className="text-lg text-gray-800">Design Portfolio</span>
             <ClickIcon
@@ -157,9 +188,23 @@ function HeroPage() {
         </Card>
 
         {/* Scroll Down Button */}
-        <Card className="h-full bg-[#ffd7ba] rounded-full w-16 h-16 flex items-center justify-center hover:shadow-xl transition-shadow cursor-pointer">
-          {/* on click: scroll to the next section */}
-          <FaChevronDown className="text-gray-600 text-xl" />
+        <Card
+          className="h-full bg-[#ffd7ba] rounded-full w-16 h-16 flex items-center justify-center hover:shadow-xl transition-shadow cursor-pointer"
+          props={{
+            onClick: () => {
+              const educationSection = document.getElementById('education');
+              if (educationSection) {
+                educationSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            },
+          }}
+        >
+          <ClickIcon
+            icon={FaAngleDown}
+            href="#"
+            hoverBgColor="hover:bg-[#f5cac3]"
+            hoverTextColor="hover:text-[#f28482]"
+          />
         </Card>
       </div>
     </div>

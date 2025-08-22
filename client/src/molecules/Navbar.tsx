@@ -44,22 +44,40 @@ function Navbar() {
         {/* Navigation Links */}
         <AnimatePresence>
           {visible && (
-            <div className="flex items-center gap-4">
-              <Link href="/" className="hover:text-blue-600 transition-colors">
+            <div className="flex items-center gap-6">
+              <button
+                onClick={() => {
+                  const educationSection = document.getElementById('education');
+                  if (educationSection) {
+                    educationSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+                className="text-gray-600 hover:text-[#84a59d] font-semibold transition-colors"
+              >
                 Education
-              </Link>
-              <Link
-                href="/about"
-                className="hover:text-blue-600 transition-colors"
+              </button>
+              <button
+                onClick={() => {
+                  const experiencesSection = document.getElementById('experiences');
+                  if (experiencesSection) {
+                    experiencesSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+                className="text-gray-600 hover:text-[#84a59d] font-semibold transition-colors"
               >
                 Experiences
-              </Link>
-              <Link
-                href="/contact"
-                className="hover:text-blue-600 transition-colors"
+              </button>
+              <button
+                onClick={() => {
+                  const projectsSection = document.getElementById('projects');
+                  if (projectsSection) {
+                    projectsSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+                className="text-gray-600 hover:text-[#84a59d] font-semibold transition-colors"
               >
                 Projects
-              </Link>
+              </button>
             </div>
           )}
         </AnimatePresence>
