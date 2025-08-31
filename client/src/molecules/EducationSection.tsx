@@ -42,11 +42,11 @@ function EducationSection() {
   ];
 
   const [isExpanded, setIsExpanded] = useState(true);
-  const [isHovering, setIsHovering] = useState(false);
+  const [isHovering, setIsHovering] = useState(true);
 
   return (
     <div
-      className="flex flex-col gap-6 py-24"
+      className="flex flex-col gap-6 py-24 px-4"
       id="education"
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
@@ -82,7 +82,6 @@ function EducationSection() {
               ease: 'easeInOut',
               opacity: { duration: 0.2 },
             }}
-            style={{ overflow: 'hidden' }}
           >
             <Card className="bg-[#f7ede2] space-y-8 py-10">
               {educationList.map((edu, index) => (
