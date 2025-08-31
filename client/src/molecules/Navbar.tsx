@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import {
   motion,
   useMotionValueEvent,
@@ -58,7 +57,8 @@ function Navbar() {
               </button>
               <button
                 onClick={() => {
-                  const experiencesSection = document.getElementById('experiences');
+                  const experiencesSection =
+                    document.getElementById('experiences');
                   if (experiencesSection) {
                     experiencesSection.scrollIntoView({ behavior: 'smooth' });
                   }
