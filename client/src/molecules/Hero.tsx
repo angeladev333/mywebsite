@@ -18,7 +18,6 @@ import { motion } from 'framer-motion';
 
 function HeroPage() {
   const aboutSectionList = [
-    'Incoming SWE Intern @Bloomberg',
     'Developing for TechNova, a Tech+ Hackathon',
     'Studying @ University of Waterloo',
     'Exchanging @ Tokyo Science University & HK CityU',
@@ -116,7 +115,7 @@ function HeroPage() {
         >
           <div className="flex justify-between items-start ml-4 group">
             <div>
-              <h2 className="text-lg font-semibold text-gray-800 mb-4">
+              <h2 className="text-lg font-semibold text-gray-800 mb-4 pt-4">
                 Constant state of learning and curiosity...
               </h2>
               <ul className="space-y-2 text-gray-700">

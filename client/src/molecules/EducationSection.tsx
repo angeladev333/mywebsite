@@ -46,7 +46,7 @@ function EducationSection() {
 
   return (
     <div
-      className="flex flex-col gap-6 py-24 px-4"
+      className="flex flex-col gap-6 pt-24 px-4"
       id="education"
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
