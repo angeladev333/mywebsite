@@ -15,12 +15,93 @@ import { FiDownload } from 'react-icons/fi';
 import Image from 'next/image';
 import { TypingText } from '../components/ui/shadcn-io/typing-text';
 import { motion } from 'framer-motion';
+import { LinkPreview } from '../components/ui/link-preview';
+
+// Helper function to parse text and identify bolded words
+const parseBoldText = (text: string) => {
+  const parts = [];
+  let currentIndex = 0;
+  const boldRegex = /\*\*(.*?)\*\*/g;
+  let match;
+
+  while ((match = boldRegex.exec(text)) !== null) {
+    // Add text before the bold word
+    if (match.index > currentIndex) {
+      parts.push({
+        type: 'text',
+        content: text.slice(currentIndex, match.index),
+      });
+    }
+
+    // Add the bold word
+    parts.push({
+      type: 'bold',
+      content: match[1], // The text inside the **
+    });
+
+    currentIndex = match.index + match[0].length;
+  }
+
+  // Add remaining text after the last bold word
+  if (currentIndex < text.length) {
+    parts.push({
+      type: 'text',
+      content: text.slice(currentIndex),
+    });
+  }
+
+  return parts;
+};
+
+// Component to render text with link previews for bolded words
+const TextWithLinkPreview: React.FC<{ text: string }> = ({ text }) => {
+  const parts = parseBoldText(text);
+
+  return (
+    <>
+      {parts.map((part, index) => {
+        if (part.type === 'bold') {
+          // For now, we'll use a placeholder URL. You can extend this to map specific words to URLs
+          const url = getUrlForBoldText(part.content);
+          return (
+            <LinkPreview
+              key={index}
+              url={url}
+              className="font-bold hover:text-[#84a59d]"
+            >
+              {part.content}
+            </LinkPreview>
+          );
+        } else {
+          return <span key={index}>{part.content}</span>;
+        }
+      })}
+    </>
+  );
+};
+
+// Helper function to map bolded text to URLs - you can customize this
+const getUrlForBoldText = (text: string): string => {
+  const urlMap: Record<string, string> = {
+    TechNova: 'https://itstechnova.org/',
+    'University of Waterloo': 'https://uwaterloo.ca/',
+    'Tokyo Science University': 'https://www.titech.ac.jp/english',
+    'Hong Kong': 'https://www.cityu.edu.hk/',
+    // Bloomberg: 'https://www.bloomberg.com/',
+    // Add more mappings as needed
+  };
+
+  return (
+    urlMap[text] ||
+    `https://www.google.com/search?q=${encodeURIComponent(text)}`
+  );
+};
 
 function HeroPage() {
   const aboutSectionList = [
-    'Developing for TechNova, a Tech+ Hackathon',
-    'Studying @ University of Waterloo',
-    'Exchanging @ Tokyo Science University & HK CityU',
+    'Developing for **TechNova**, a Tech+ Hackathon',
+    'Studying in **University of Waterloo**',
+    'Exchanging in **Tokyo Science University** & **Hong Kong**',
   ];
 
   const [hovering, setHovering] = useState(false);
@@ -122,7 +203,9 @@ function HeroPage() {
                 {aboutSectionList.map((item, index) => (
                   <li key={index} className="flex items-start gap-2">
                     <span className="text-gray-400">•</span>
-                    <span>{item}</span>
+                    <span>
+                      <TextWithLinkPreview text={item} />
+                    </span>
                   </li>
                 ))}
               </ul>

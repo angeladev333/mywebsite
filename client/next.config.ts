@@ -5,7 +5,11 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
+    domains: [
+      "api.microlink.io", // Microlink Image Preview
+    ],
     remotePatterns: [
+      
       {
         protocol: 'https',
         hostname: 'lh3.googleusercontent.com',
