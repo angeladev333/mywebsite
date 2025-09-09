@@ -110,9 +110,9 @@ function HeroPage() {
   return (
     <div className="flex flex-col gap-6 w-full">
       {/* Top Row - Profile and Photo */}
-      <div className="grid grid-cols-5 gap-6 min-h-[200px]">
+      <div className="flex flex-col gap-6 lg:grid lg:grid-cols-5 lg:gap-6 min-h-[200px]">
         {/* Profile Card */}
-        <div className="col-span-3">
+        <div className="lg:col-span-3">
           <Card
             className="bg-[#f8edeb] flex items-center justify-between h-full relative"
             props={{
@@ -136,7 +136,7 @@ function HeroPage() {
                       inViewMargin="0px"
                     />
                   ) : (
-                    'incoming SWE intern @bloomberg'
+                    'SWE intern @bloomberg'
                   )}
                 </span>
               </div>
@@ -173,8 +173,8 @@ function HeroPage() {
         </div>
 
         {/* Photo Card */}
-        <div className="col-span-2 ">
-          <div className="overflow-hidden rounded-3xl shadow-lg h-full relative hover:scale-102 transition-transform duration-300 cursor-pointer">
+        <div className="lg:col-span-2">
+          <div className="overflow-hidden rounded-3xl shadow-lg h-52 lg:h-full relative hover:scale-102 transition-transform duration-300 cursor-pointer">
             <Image
               src="/assets/image.jpg"
               alt="profile"
@@ -186,7 +186,7 @@ function HeroPage() {
       </div>
 
       {/* About Section */}
-      <div className="w-full">
+      <div className="w-full hidden lg:block">
         <Card
           className="bg-[#f7ede2] min-h-[200px]"
           props={{
@@ -258,7 +258,7 @@ function HeroPage() {
           }}
         >
           <div className="flex items-center justify-between ml-4">
-            <span className="text-lg text-gray-800">Design Portfolio</span>
+            <span className="text-lg text-gray-800">Portfolio</span>
             <ClickIcon
               icon={MdArrowOutward}
               href="https://angela-xu-site-ii.super.site/"
@@ -271,7 +271,7 @@ function HeroPage() {
 
         {/* Scroll Down Button */}
         <Card
-          className="h-full bg-[#ffd7ba] rounded-full w-16 h-16 flex items-center justify-center hover:shadow-xl transition-shadow cursor-pointer"
+          className="hidden lg:flex h-full bg-[#ffd7ba] rounded-full w-16 h-16 items-center justify-center hover:shadow-xl transition-shadow cursor-pointer"
           props={{
             onClick: () => {
               const educationSection = document.getElementById('education');
