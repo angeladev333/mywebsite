@@ -110,9 +110,9 @@ function HeroPage() {
   return (
     <div className="flex flex-col gap-6 w-full">
       {/* Top Row - Profile and Photo */}
-      <div className="flex flex-col gap-6 lg:grid lg:grid-cols-5 lg:gap-6 min-h-[200px]">
+      <div className="flex flex-col gap-6 sm:grid sm:grid-cols-5 sm:gap-6 min-h-[200px]">
         {/* Profile Card */}
-        <div className="lg:col-span-3">
+        <div className="sm:col-span-3">
           <Card
             className="bg-[#f8edeb] flex items-center justify-between h-full relative"
             props={{
@@ -146,6 +146,7 @@ function HeroPage() {
                 <h1 className="text-3xl font-bold text-gray-800">Angela Xu</h1>
                 <p className="text-gray-500 flex items-center">
                   <span>📍</span>
+                  {/* TODO: add blinking light */}
                   toronto, canada
                 </p>
               </div>
@@ -168,13 +169,14 @@ function HeroPage() {
                 href="https://github.com/angeladev333"
                 external={true}
               />
+              {/* TODO: ADD DEVPOST */}
             </div>
           </Card>
         </div>
 
         {/* Photo Card */}
-        <div className="lg:col-span-2">
-          <div className="overflow-hidden rounded-3xl shadow-lg h-52 lg:h-full relative hover:scale-102 transition-transform duration-300 cursor-pointer">
+        <div className="sm:col-span-2">
+          <div className="overflow-hidden rounded-3xl shadow-lg h-52 sm:h-full relative hover:scale-102 transition-transform duration-300 cursor-pointer">
             <Image
               src="/assets/image.jpg"
               alt="profile"
@@ -186,7 +188,7 @@ function HeroPage() {
       </div>
 
       {/* About Section */}
-      <div className="w-full hidden lg:block">
+      <div className="w-full hidden sm:block">
         <Card
           className="bg-[#f7ede2] min-h-[200px]"
           props={{
@@ -271,7 +273,7 @@ function HeroPage() {
 
         {/* Scroll Down Button */}
         <Card
-          className="hidden lg:flex h-full bg-[#ffd7ba] rounded-full w-16 h-16 items-center justify-center hover:shadow-xl transition-shadow cursor-pointer"
+          className="hidden sm:flex h-full bg-[#ffd7ba] rounded-full w-16 h-16 items-center justify-center hover:shadow-xl transition-shadow cursor-pointer"
           props={{
             onClick: () => {
               const educationSection = document.getElementById('education');

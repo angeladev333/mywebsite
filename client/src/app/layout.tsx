@@ -30,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased dotted-background`}>
+      <body className={`${inter.variable} antialiased dotted-background pt-6`}>
         <NewNavbar />
         {children}
       </body>
