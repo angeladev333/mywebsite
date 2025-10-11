@@ -10,6 +10,7 @@ import {
   // FaChevronDown,
   FaAngleDown,
 } from 'react-icons/fa';
+import { SiDevpost } from 'react-icons/si';
 import { MdArrowOutward } from 'react-icons/md';
 import { FiDownload } from 'react-icons/fi';
 import Image from 'next/image';
@@ -155,11 +156,6 @@ function HeroPage() {
             {/* Social Icons */}
             <div className="flex gap-2">
               <ClickIcon
-                icon={FaRegEnvelope}
-                href="mailto:as2xu@uwaterloo.ca"
-                external={true}
-              />
-              <ClickIcon
                 icon={FaLinkedin}
                 href="https://linkedin.com/in/angela-xu"
                 external={true}
@@ -169,7 +165,11 @@ function HeroPage() {
                 href="https://github.com/angeladev333"
                 external={true}
               />
-              {/* TODO: ADD DEVPOST */}
+              <ClickIcon
+                icon={SiDevpost}
+                href="https://devpost.com/angela-xu1709"
+                external={true}
+              />
             </div>
           </Card>
         </div>
