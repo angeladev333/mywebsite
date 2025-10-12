@@ -11,7 +11,7 @@ export default function Home() {
         <HeroPage />
         <div className="flex flex-col gap-6 pb-24 lg:pb-52">
           <ExperienceSection />
-          <EducationSection />
+          {/* <EducationSection /> */}
           <FunFactsFooter />
         </div>
       </div>

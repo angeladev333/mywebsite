@@ -6,7 +6,10 @@ import { InfiniteMovingCards } from './infinite-moving-cards';
 export function FunFactsFooter() {
   return (
     <>
-      <div className="h-[40rem] rounded-md flex flex-col antialiased  justify-center relative overflow-hidden">
+      <div
+        id="fun-facts"
+        className="h-[40rem] rounded-md flex flex-col antialiased  justify-center relative overflow-hidden"
+      >
         <p className="text-slate-600 text-left p-4 ">
           As a self-proclaimed jack of all trades, <br />
           there are a myriad of hobbies I have tried; activities attempted; and
@@ -33,18 +36,28 @@ const cool_things = [
     title: 'UWaterloo',
   },
   {
-    quote: 'Math Contest Distinctions',
-    name: 'Euclid and Cayley School Champion, Spirit of Math Olympiads Award, Beaver Computing Challenge Perfect Score',
-    title: 'EHSS',
+    quote: 'Summer Programs',
+    name: 'Google Computer Science Summer Institute, SHAD, CEMC Invitational Mathematics Workshop',
+    title: '2022-23',
   },
   {
     quote: 'Certifications',
     name: 'YAMAHA Teaching License L4, AP Calculus BC, RMC ARCT Piano, RMC Level 10 Violin',
   },
   {
-    quote: 'Scholarships ~$20,000',
-    name: "JASSO 400 000¥, International Experience Award $2500, President's International Exchange $1500, President's Scholarship of Distinction $2000, Scotiabank WiCS $10,000, GHC Sponsorship ~$1000",
-    title: 'UWaterloo',
+    quote: 'International Exchanges',
+    name: 'Science Tokyo, CityU of Hong Kong',
+    title: 'Japan, Hong Kong',
+  },
+  // {
+  //   quote: 'Scholarships ~$20,000',
+  //   name: "JASSO 400 000¥, International Experience Award $2500, President's International Exchange $1500, President's Scholarship of Distinction $2000, Scotiabank WiCS $10,000, GHC Sponsorship ~$1000",
+  //   title: 'UWaterloo',
+  // },
+  {
+    quote: 'Math Contest Distinctions',
+    name: 'Euclid and Cayley School Champion, Spirit of Math Olympiads Award, Beaver Computing Challenge Perfect Score',
+    title: 'EHSS',
   },
   {
     quote: 'Some things I have tried (,,>-<,,)',
@@ -52,7 +65,7 @@ const cool_things = [
     title: 'EHSS',
   },
   {
-    quote: 'I graduated High School ദ്ദി ˉ͈̀꒳ˉ͈́ )✧',
+    quote: 'I graduated high school ദ്ദി ˉ͈̀꒳ˉ͈́ )✧',
     name: 'Math & Chemistry Graduating Awards | Piano Major, Honors',
     title: 'EHSS',
   },
@@ -70,10 +83,5 @@ const cool_things = [
     quote: 'YAMAHA Music School',
     name: 'Piano Assistant Teacher (Contract Part-time)',
     title: '2017-19',
-  },
-  {
-    quote: 'Summer Programs',
-    name: 'Google Computer Science Summer Institute, SHAD, CEMC Invitational Mathematics Workshop',
-    title: '2022-23',
   },
 ];

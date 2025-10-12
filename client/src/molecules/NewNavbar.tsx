@@ -16,16 +16,16 @@ function NewNavbar() {
 
   const navItems = [
     {
-      name: 'Education',
-      link: '#education',
-    },
-    {
       name: 'Experiences',
       link: '#experiences',
     },
     {
       name: 'Projects',
       link: '#projects',
+    },
+    {
+      name: 'More',
+      link: '#fun-facts',
     },
   ];
 
