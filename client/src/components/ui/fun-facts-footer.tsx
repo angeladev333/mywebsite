@@ -28,7 +28,7 @@ export function FunFactsFooter() {
 const cool_things = [
   {
     quote: '5x Hackathon Wins',
-    name: '1st Place @ Hack the Valley, Best AI Application @ DeltaHacks, AI Agents @ HackMIT, Best Use of MondoDB @ HackWestern, Radia Perlman Award @ Ignition Hacks',
+    name: '1st Place @ Hack the Valley, Best AI App @ DeltaHacks, AI Agents @ HackMIT, Best Use of MongoDB @ HackWestern, Radia Perlman Award @ Ignition Hacks',
   },
   {
     quote: 'Prev Web Developer',

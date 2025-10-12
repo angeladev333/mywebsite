@@ -134,6 +134,10 @@ function ExperienceSection() {
               opacity: { duration: 0.2 },
             }}
           >
+            <p className="px-6 text-gray-700 text-sm mb-6">
+              I've had the pleasure of working 4 internships, 3 companies, 2
+              startups, and 1 awesome summer camp:
+            </p>
             {/* Toggle Selector */}
             <div className="flex justify-center mb-6">
               <div className="relative bg-gray-100 rounded-full px-4 py-1 grid grid-cols-2 w-1/2">
