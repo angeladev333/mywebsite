@@ -89,8 +89,10 @@ function HeroPage() {
               <div className="flex flex-col gap-1 ml-4">
                 <h1 className="text-3xl font-bold text-gray-800">Angela Xu</h1>
                 <p className="text-gray-500 flex items-center">
-                  <span>📍</span>
-                  {/* TODO: add blinking light */}
+                  <span className="relative flex size-2 mr-2">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-300 opacity-75"></span>
+                    <span className="relative inline-flex size-2 rounded-full bg-[#f28482]"></span>
+                  </span>
                   toronto, canada
                 </p>
               </div>

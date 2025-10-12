@@ -7,7 +7,7 @@ import {
   useScroll,
   AnimatePresence,
 } from 'framer-motion';
-import { FaRegEnvelope, FaLinkedin, FaGithubAlt } from 'react-icons/fa';
+import { FaLinkedin, FaGithubAlt } from 'react-icons/fa';
 import { SiDevpost } from 'react-icons/si';
 
 function ExpandableFooter() {
@@ -66,38 +66,35 @@ function ExpandableFooter() {
                 </span>
               </div>
 
-              {/* Center section - Social Icons */}
+              {/* Center section - CS Webring */}
               <div className="flex items-center justify-center flex-1">
-                <div className="flex gap-2">
+                <div className="flex items-center gap-2">
                   <motion.a
-                    href="https://linkedin.com/in/angela-xu"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2 rounded-full hover:bg-gray-200 transition-colors"
+                    href="https://cs.uwatering.com/#angelaxu.design?nav=prev"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <FaLinkedin className="w-5 h-5 text-gray-600 hover:text-[#84a59d]" />
+                    ←
                   </motion.a>
                   <motion.a
-                    href="https://github.com/angeladev333"
+                    href="https://cs.uwatering.com/#angelaxu.design"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 rounded-full hover:bg-gray-200 transition-colors"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <FaGithubAlt className="w-5 h-5 text-gray-600 hover:text-[#84a59d]" />
+                    <img
+                      src="https://cs.uwatering.com/icon.black.svg"
+                      alt="CS Webring"
+                      className="w-6 h-auto opacity-80 hover:opacity-100 transition-opacity"
+                    />
                   </motion.a>
                   <motion.a
-                    href="https://devpost.com/angela-xu1709"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2 rounded-full hover:bg-gray-200 transition-colors"
+                    href="https://cs.uwatering.com/#angelaxu.design?nav=next"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <SiDevpost className="w-5 h-5 text-gray-600 hover:text-[#84a59d]" />
+                    →
                   </motion.a>
                 </div>
               </div>
