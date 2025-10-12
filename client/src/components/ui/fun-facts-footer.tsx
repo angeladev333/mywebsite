@@ -42,8 +42,8 @@ const cool_things = [
     name: 'YAMAHA Teaching License L4, AP Calculus BC, RMC ARCT Piano, RMC Level 10 Violin',
   },
   {
-    quote: 'Scholarships',
-    name: "JASSO 400,000¥, International Experience Award $2500, President's International Exchange $1500, President's Scholarship of Distinction $2000, Scotiabank WiCS Scholarship $10,000, GHC Sponsorship ~$1000",
+    quote: 'Scholarships ~$20,000',
+    name: "JASSO 400 000¥, International Experience Award $2500, President's International Exchange $1500, President's Scholarship of Distinction $2000, Scotiabank WiCS $10,000, GHC Sponsorship ~$1000",
     title: 'UWaterloo',
   },
   {
