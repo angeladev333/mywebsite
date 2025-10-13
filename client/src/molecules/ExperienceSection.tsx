@@ -1,6 +1,5 @@
 'use client';
 import React, { useState } from 'react';
-import Card from '../components/ui/card';
 import HoverTitle from '../components/ui/hoverTitle';
 import { IoMdArrowDropright } from 'react-icons/io';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -10,13 +9,24 @@ import Image from 'next/image';
 function ExperienceSection() {
   const experienceList = [
     {
+      company: 'Bloomberg',
+      role: 'Software Engineering Intern',
+      location: 'New York, NY',
+      period: 'Sep 2025 - Dec 2025',
+      description:
+        'Developing a RAG system to power suggestion-based trade matching, enhancing efficiency for the collateral team.',
+      skills: ['Python', 'Scikit-learn', 'Pandas', 'SQL'],
+      image: '/assets/Bloomberg-logo.png',
+      imageLink: 'https://www.bloomberg.com/',
+    },
+    {
       company: 'MedMe Health',
       role: 'Software Engineering Intern',
       location: 'Toronto, ON',
       period: 'May 2024 - Aug 2024, Jan 2025 - Apr 2025',
       description:
         'Built an AI-powered tool that transcribes pharmacy appointments into structured medical forms, cutting documentation time by 80% and saving 400+ hours weekly across 1000+ pharmacies.',
-      skills: ['React', 'Node.js', 'AI/ML', 'Healthcare Tech'],
+      skills: ['Typescript', 'REST', 'GraphQL'],
       image:
         'https://lh3.googleusercontent.com/p/AF1QipNAi7c2cNx7_UvJcbMkF4dvyQYO02_QI1UOv4x9=s1360-w1360-h1020-rw',
       imageLink: 'https://medmehealth.com',
@@ -27,8 +37,8 @@ function ExperienceSection() {
       location: 'Toronto, ON',
       period: 'May 2023 - Aug 2023',
       description:
-        'Built an AI-powered tool that transcribes pharmacy appointments into structured medical forms, cutting documentation time by 80% and saving 400+ hours weekly across 1000+ pharmacies.',
-      skills: ['Python', 'Django', 'PostgreSQL', 'AWS'],
+        'Resolved 1000+ technical debt, 300+ bugs, and 50+ data fixes with SQL queries, resulting in 15% productivity increase.',
+      skills: ['Java', 'Springboot', 'SQL', 'Vue'],
       image:
         'https://media.licdn.com/dms/image/v2/C560BAQEp6WTm8_C1LQ/company-logo_200_200/company-logo_200_200/0/1670876631638/iblum_logo?e=2147483647&v=beta&t=PSwFQ4JmfhdoFHa5rB5PZip7jSWsfzLVrOxbZNeJbRs',
       imageLink: 'https://iblum.co/',
@@ -57,8 +67,7 @@ function ExperienceSection() {
       description:
         "Developing platform for Canada's largest tech+ hackathon with 1000+ participants. Built registration system, mentor matching, and real-time event management features.",
       skills: ['React', 'Express.js', 'MongoDB', 'Socket.io'],
-      image:
-        'https://scontent-yyz1-1.xx.fbcdn.net/v/t39.30808-6/293079096_364629009129582_3182364608188487713_n.png?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=FNdPY3fr-PMQ7kNvwH0O6rK&_nc_oc=Adl6PGBeRUXQHHn_mg4Vym6vH3rnqIKSTS29A8oBCisGE7g85NAy8b7ktpkz4fXd1EE&_nc_zt=23&_nc_ht=scontent-yyz1-1.xx&_nc_gid=RCdZI80fkVFAF72wtmJqEQ&oh=00_AfWEB9bKRD-bGnB2WXMFrTOh0s5VUJ2IEGKLzWjFzVGokA&oe=68BAF7DA',
+      image: '/assets/technova.webp',
       imageLink: 'https://itstechnova.org/',
     },
     {
@@ -140,12 +149,12 @@ function ExperienceSection() {
             </p>
             {/* Toggle Selector */}
             <div className="flex justify-center mb-6">
-              <div className="relative bg-gray-100 rounded-full px-4 py-1 grid grid-cols-2 w-1/2">
+              <div className="relative bg-gray-100 rounded-full p-2 grid grid-cols-2 w-48 sm:w-80">
                 {/* Animated Background */}
                 <motion.div
-                  className="absolute top-1 bg-[#f7ede2] rounded-full shadow-md"
+                  className="absolute top-1 left-1 bg-[#f7ede2] rounded-full shadow-md h-10"
                   animate={{
-                    x: activeTab === 'work' ? '0%' : '100%',
+                    x: activeTab === 'work' ? '0%' : 'calc(100% - 2px)',
                   }}
                   transition={{
                     type: 'spring',
@@ -153,35 +162,38 @@ function ExperienceSection() {
                     damping: 30,
                   }}
                   style={{
-                    height: 'calc(100% - 8px)',
-                    width: '50%',
+                    width: 'calc(50% - 4px)',
                   }}
                 />
 
                 {/* Work Button */}
                 <button
                   onClick={() => setActiveTab('work')}
-                  className={`relative z-10 flex items-center justify-center gap-2 py-3 rounded-full transition-colors duration-300 ${
+                  className={`relative z-10 flex items-center justify-center gap-2 h-8 rounded-full transition-colors duration-300 ${
                     activeTab === 'work'
                       ? 'text-gray-800'
                       : 'text-gray-600 hover:text-gray-800'
                   }`}
                 >
-                  <MdWork className="text-lg" />
-                  <span className="font-medium">Work</span>
+                  <MdWork className="text-base" />
+                  <span className="font-medium text-sm hidden sm:inline">
+                    Work
+                  </span>
                 </button>
 
                 {/* Extracurriculars Button */}
                 <button
                   onClick={() => setActiveTab('extracurriculars')}
-                  className={`relative z-10 flex items-center justify-center gap-2 py-3 rounded-full transition-colors duration-300 ${
+                  className={`relative z-10 flex items-center justify-center gap-2 h-8 rounded-full transition-colors duration-300 ${
                     activeTab === 'extracurriculars'
                       ? 'text-gray-800'
                       : 'text-gray-600 hover:text-gray-800'
                   }`}
                 >
-                  <MdLocationOn className="text-lg" />
-                  <span className="font-medium">Extracurriculars</span>
+                  <MdLocationOn className="text-base" />
+                  <span className="font-medium text-sm hidden sm:inline">
+                    Extracurriculars
+                  </span>
                 </button>
               </div>
             </div>
@@ -322,7 +334,7 @@ function ExperienceSection() {
                         </div>
 
                         {/* Image Content - 2/5 width */}
-                        <div className="flex-[2] flex items-center justify-center">
+                        <div className="flex-[2] hidden sm:flex items-center justify-center">
                           {((activeTab === 'work' &&
                             (item as (typeof experienceList)[0]).image) ||
                             (activeTab === 'extracurriculars' &&

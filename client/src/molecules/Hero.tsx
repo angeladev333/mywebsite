@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Card from '../components/ui/card';
 import ClickIcon from '../components/ui/clickIcon';
 import { FaGithubAlt, FaLinkedin } from 'react-icons/fa';
@@ -12,8 +12,44 @@ import Image from 'next/image';
 import { TypingText } from '../components/ui/shadcn-io/typing-text';
 import { motion } from 'framer-motion';
 import { LinkPreview } from '../components/ui/link-preview';
+import PixelateSvgFilter from '../components/fancy/filter/pixelate-svg-filter';
+import useMouse from '@react-hook/mouse-position';
 
 function HeroPage() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
+  const mouse = useMouse(containerRef as React.RefObject<HTMLElement>);
+
+  // Calculate distance from mouse to image
+  const getDistanceToImage = () => {
+    if (!imageRef.current || !containerRef.current || !mouse.x || !mouse.y)
+      return 1000;
+
+    const imageRect = imageRef.current.getBoundingClientRect();
+    const containerRect = containerRef.current.getBoundingClientRect();
+
+    // Convert mouse position to absolute coordinates
+    const mouseX = mouse.x + containerRect.left;
+    const mouseY = mouse.y + containerRect.top;
+
+    // Calculate distance to image center
+    const imageCenterX = imageRect.left + imageRect.width / 2;
+    const imageCenterY = imageRect.top + imageRect.height / 2;
+
+    const distance = Math.sqrt(
+      Math.pow(mouseX - imageCenterX, 2) + Math.pow(mouseY - imageCenterY, 2)
+    );
+
+    return distance;
+  };
+
+  const distanceToImage = getDistanceToImage();
+  const maxDistance = 200; // Pixels from image center
+  const pixelSize =
+    distanceToImage < maxDistance
+      ? Math.min(Math.max((maxDistance - distanceToImage) / 25, 1), 8)
+      : 1;
+
   const aboutSectionList = [
     <>
       Developing for{' '}
@@ -56,7 +92,12 @@ function HeroPage() {
   const [hoveringEmoji, setHoveringEmoji] = useState(false);
 
   return (
-    <div className="flex flex-col gap-6 w-full">
+    <div className="flex flex-col gap-6 w-full" ref={containerRef}>
+      <PixelateSvgFilter
+        id="hero-pixelate-filter"
+        size={pixelSize}
+        crossLayers
+      />
       <div className="flex flex-col gap-6 sm:grid sm:grid-cols-5 sm:gap-6 min-h-[200px]">
         <div className="sm:col-span-3">
           <Card
@@ -119,12 +160,16 @@ function HeroPage() {
         </div>
 
         <div className="sm:col-span-2">
-          <div className="overflow-hidden rounded-3xl shadow-lg h-52 sm:h-full relative hover:scale-102 transition-transform duration-300 cursor-pointer">
+          <div
+            ref={imageRef}
+            className="overflow-hidden rounded-3xl shadow-lg h-52 sm:h-full relative hover:scale-102 transition-transform duration-300 cursor-pointer"
+          >
             <Image
               src="/assets/image.jpg"
               alt="profile"
               fill
               className="object-cover"
+              style={{ filter: 'url(#hero-pixelate-filter)' }}
             />
           </div>
         </div>
