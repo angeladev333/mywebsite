@@ -10,6 +10,7 @@ import {
   MobileNavToggle,
   MobileNavMenu,
 } from '@/components/ui/resizable-navbar';
+import { motion } from 'motion/react';
 
 function NewNavbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -59,7 +60,21 @@ function NewNavbar() {
         {/* Mobile Navigation */}
         <MobileNav className="bg-slate-50/50 shadow-md rounded-full px-4 py-2 backdrop-blur-sm">
           <MobileNavHeader>
-            <NavbarLogo />
+            {/* CS Webring */}
+            <motion.a
+              href="https://cs.uwatering.com/#angelaxu.design"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              className="pl-12"
+            >
+              <img
+                src="https://cs.uwatering.com/icon.black.svg"
+                alt="CS Webring"
+                className="w-6 h-auto opacity-80 hover:opacity-100 transition-opacity"
+              />
+            </motion.a>
             <MobileNavToggle
               isOpen={isMobileMenuOpen}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

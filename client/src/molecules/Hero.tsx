@@ -21,34 +21,34 @@ function HeroPage() {
   const mouse = useMouse(containerRef as React.RefObject<HTMLElement>);
 
   // Calculate distance from mouse to image
-  const getDistanceToImage = () => {
-    if (!imageRef.current || !containerRef.current || !mouse.x || !mouse.y)
-      return 1000;
+  // const getDistanceToImage = () => {
+  //   if (!imageRef.current || !containerRef.current || !mouse.x || !mouse.y)
+  //     return 1000;
 
-    const imageRect = imageRef.current.getBoundingClientRect();
-    const containerRect = containerRef.current.getBoundingClientRect();
+  //   const imageRect = imageRef.current.getBoundingClientRect();
+  //   const containerRect = containerRef.current.getBoundingClientRect();
 
-    // Convert mouse position to absolute coordinates
-    const mouseX = mouse.x + containerRect.left;
-    const mouseY = mouse.y + containerRect.top;
+  //   // Convert mouse position to absolute coordinates
+  //   const mouseX = mouse.x + containerRect.left;
+  //   const mouseY = mouse.y + containerRect.top;
 
-    // Calculate distance to image center
-    const imageCenterX = imageRect.left + imageRect.width / 2;
-    const imageCenterY = imageRect.top + imageRect.height / 2;
+  //   // Calculate distance to image center
+  //   const imageCenterX = imageRect.left + imageRect.width / 2;
+  //   const imageCenterY = imageRect.top + imageRect.height / 2;
 
-    const distance = Math.sqrt(
-      Math.pow(mouseX - imageCenterX, 2) + Math.pow(mouseY - imageCenterY, 2)
-    );
+  //   const distance = Math.sqrt(
+  //     Math.pow(mouseX - imageCenterX, 2) + Math.pow(mouseY - imageCenterY, 2)
+  //   );
 
-    return distance;
-  };
+  //   return distance;
+  // };
 
-  const distanceToImage = getDistanceToImage();
-  const maxDistance = 200; // Pixels from image center
-  const pixelSize =
-    distanceToImage < maxDistance
-      ? Math.min(Math.max((maxDistance - distanceToImage) / 25, 1), 8)
-      : 1;
+  // const distanceToImage = getDistanceToImage();
+  // const maxDistance = 200; // Pixels from image center
+  // const pixelSize =
+  //   distanceToImage < maxDistance
+  //     ? Math.min(Math.max((maxDistance - distanceToImage) / 25, 1), 8)
+  //     : 1;
 
   const aboutSectionList = [
     <>
@@ -93,11 +93,11 @@ function HeroPage() {
 
   return (
     <div className="flex flex-col gap-6 w-full" ref={containerRef}>
-      <PixelateSvgFilter
+      {/* <PixelateSvgFilter
         id="hero-pixelate-filter"
         size={pixelSize}
         crossLayers
-      />
+      /> */}
       <div className="flex flex-col gap-6 sm:grid sm:grid-cols-5 sm:gap-6 min-h-[200px]">
         <div className="sm:col-span-3">
           <Card
