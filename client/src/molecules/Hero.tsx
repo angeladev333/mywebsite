@@ -165,11 +165,11 @@ function HeroPage() {
             className="overflow-hidden rounded-3xl shadow-lg h-52 sm:h-full relative hover:scale-102 transition-transform duration-300 cursor-pointer"
           >
             <Image
-              src="/assets/image.jpg"
+              src="/assets/profile2.jpeg"
               alt="profile"
               fill
-              className="object-cover"
-              style={{ filter: 'url(#hero-pixelate-filter)' }}
+              className="object-cover opacity-70 hover:opacity-80 transition-opacity duration-300"
+              // style={{ filter: 'url(#hero-pixelate-filter)' }}
             />
           </div>
         </div>
