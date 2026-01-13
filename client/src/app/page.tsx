@@ -1,3 +1,5 @@
+'use client';
+
 import HeroPage from '@/molecules/Hero';
 import EducationSection from '@/molecules/EducationSection';
 import ExperienceSection from '@/molecules/ExperienceSection';

@@ -123,7 +123,7 @@ function ExperienceSection() {
         </motion.div>
         <div className="flex-1">
           <HoverTitle
-            title="Experience"
+            title="Experiences"
             emojiIcon="ദ്ദി૮(˵ •̀ ᴗ - ˵ ) ა✧"
             isHovering={isHovering}
             setIsHovering={setIsHovering}
@@ -145,7 +145,7 @@ function ExperienceSection() {
           >
             <p className="px-6 text-gray-700 text-sm mb-6">
               I've had the pleasure of working 4 internships, 3 companies, 2
-              startups, and 1 awesome summer camp:
+              YC-backed startups, and 1 awesome summer camp:
             </p>
             {/* Toggle Selector */}
             <div className="flex justify-center mb-6">

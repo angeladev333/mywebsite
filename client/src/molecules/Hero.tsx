@@ -12,7 +12,6 @@ import Image from 'next/image';
 import { TypingText } from '../components/ui/shadcn-io/typing-text';
 import { motion } from 'framer-motion';
 import { LinkPreview } from '../components/ui/link-preview';
-import PixelateSvgFilter from '../components/fancy/filter/pixelate-svg-filter';
 import useMouse from '@react-hook/mouse-position';
 
 function HeroPage() {
