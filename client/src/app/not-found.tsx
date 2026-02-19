@@ -10,7 +10,7 @@ export default function NotFound() {
         <p className="text-2xl text-gray-600 mt-4">Page not found</p>
         <div className="text-gray-500 mt-2">
           Were you looking for{' '}
-          <LinkPreview url="https://v1.angelaxu.design/">
+          <LinkPreview url="https://v1.angelaskiexu.me/">
             {`this? (˵ ¬ᴗ¬˵)`}
           </LinkPreview>
         </div>

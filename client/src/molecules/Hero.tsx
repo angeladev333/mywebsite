@@ -58,10 +58,10 @@ function HeroPage() {
       >
         TechNova
       </LinkPreview>
-      , a Tech+ Hackathon
+      &nbsp;(Engineering Coordinator)
     </>,
     <>
-      BCS + AI + CM{' '}
+      Bachelor of Computer Science (specialization in AI + Computational Mathematics minor){' '}
       <LinkPreview
         url="https://uwaterloo.ca/"
         className="font-bold hover:text-[#84a59d]"
@@ -70,19 +70,19 @@ function HeroPage() {
       </LinkPreview>
     </>,
     <>
-      Exchanging in{' '}
+      Exchange Student in{' '}
       <LinkPreview
         url="https://www.titech.ac.jp/english"
         className="font-bold hover:text-[#84a59d]"
       >
-        Tokyo Science University
+        Tokyo Science University (Summer 2025)
       </LinkPreview>
       {' & '}
       <LinkPreview
         url="https://www.cityu.edu.hk/"
         className="font-bold hover:text-[#84a59d]"
       >
-        Hong Kong
+        Hong Kong (Winter 2026)
       </LinkPreview>
     </>,
   ];
@@ -176,7 +176,7 @@ function HeroPage() {
 
       <div className="w-full hidden sm:block">
         <Card
-          className="bg-[#f7ede2] min-h-[200px]"
+          className="bg-[#fff7ec] min-h-[200px]"
           props={{
             onMouseEnter: () => setHoveringEmoji(true),
             onMouseLeave: () => setHoveringEmoji(false),
@@ -213,7 +213,7 @@ function HeroPage() {
 
       <div className="flex gap-6 items-center">
         <Card
-          className="bg-[#fcd5ce] flex-1 rounded-full hover:shadow-xl transition-shadow cursor-pointer"
+          className="bg-[#fad8d2] flex-1 rounded-full hover:shadow-xl transition-shadow cursor-pointer"
           props={{
             onClick: () => {
               window.open('/resume/AngelaXu_resume_3.3.pdf', '_blank');
@@ -233,7 +233,7 @@ function HeroPage() {
         </Card>
 
         <Card
-          className="h-full bg-[#d8e2dc] flex-1 rounded-full hover:shadow-xl transition-shadow cursor-pointer"
+          className="h-full bg-[#d6e7e3] flex-1 rounded-full hover:shadow-xl transition-shadow cursor-pointer"
           props={{
             onClick: () => {
               window.open('https://angela-xu-site-ii.super.site/', '_blank');
@@ -253,7 +253,7 @@ function HeroPage() {
         </Card>
 
         <Card
-          className="hidden sm:flex h-full bg-[#ffd7ba] rounded-full w-16 h-16 items-center justify-center hover:shadow-xl transition-shadow cursor-pointer"
+          className="hidden sm:flex h-full bg-[#dbe8ea] rounded-full w-16 h-16 items-center justify-center hover:shadow-xl transition-shadow cursor-pointer"
           props={{
             onClick: () => {
               const experienceSection = document.getElementById('experiences');
