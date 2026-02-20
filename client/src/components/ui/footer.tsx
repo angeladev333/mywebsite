@@ -87,6 +87,7 @@ function ExpandableFooter() {
                       src="https://cs.uwatering.com/icon.black.svg"
                       alt="CS Webring"
                       className="w-6 h-auto opacity-80 hover:opacity-100 transition-opacity"
+                      loading="lazy"
                     />
                   </motion.a>
                   <motion.a

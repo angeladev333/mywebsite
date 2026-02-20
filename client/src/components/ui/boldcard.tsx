@@ -41,6 +41,7 @@ function BoldCard({
               src={image}
               alt={title}
               className="w-full h-full object-cover"
+              loading="lazy"
             />
           </div>
         </motion.div>

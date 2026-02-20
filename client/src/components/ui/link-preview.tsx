@@ -83,6 +83,7 @@ export const LinkPreview = ({
             width={width}
             height={height}
             alt="hidden image"
+            loading="lazy"
           />
         </div>
       ) : null}
@@ -139,6 +140,7 @@ export const LinkPreview = ({
                     height={height}
                     className="rounded-lg"
                     alt="preview image"
+                    loading="lazy"
                   />
                 </a>
               </motion.div>

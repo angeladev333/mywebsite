@@ -58,7 +58,7 @@ function NewNavbar() {
         </NavBody>
 
         {/* Mobile Navigation */}
-        <MobileNav className="bg-slate-50/50 shadow-md rounded-full px-4 py-2 backdrop-blur-sm">
+        <MobileNav className="bg-slate-50/50 shadow-md rounded-full px-4 sm:px-6 md:px-8 py-2 backdrop-blur-sm">
           <MobileNavHeader>
             {/* CS Webring */}
             <div className="flex items-center gap-2 pl-4">
@@ -71,6 +71,7 @@ function NewNavbar() {
                   src="https://cs.uwatering.com/icon.black.svg"
                   alt="CS Webring"
                   className="w-6 h-auto"
+                  loading="lazy"
                 />
               </a>
               <a href="https://cs.uwatering.com/#angelaxu.design?nav=next">→</a>

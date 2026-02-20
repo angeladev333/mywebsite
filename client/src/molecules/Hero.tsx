@@ -167,6 +167,7 @@ function HeroPage() {
               src="/assets/profile2.jpeg"
               alt="profile"
               fill
+              loading="lazy"
               className="object-cover opacity-70 hover:opacity-80 transition-opacity duration-300"
               // style={{ filter: 'url(#hero-pixelate-filter)' }}
             />

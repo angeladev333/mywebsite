@@ -336,6 +336,7 @@ function ExperienceSection() {
                                   src={item.image}
                                   alt={`${item.company}`}
                                   fill
+                                  loading="lazy"
                                   className="object-cover"
                                 />
                               </a>
@@ -468,6 +469,7 @@ function ExperienceSection() {
                                   src={item.image}
                                   alt={`${item.organization}`}
                                   fill
+                                  loading="lazy"
                                   className="object-cover"
                                 />
                               </a>
